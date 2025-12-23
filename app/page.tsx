@@ -175,7 +175,7 @@ const SERVICES_DATA = [
 ];
 
 export default function Home() {
-  const [openSections, setOpenSections] = useState<number[]>([1]); // 첫 번째 섹션만 기본적으로 열림
+  const [openSections, setOpenSections] = useState<number[]>([]); // 모든 섹션 기본적으로 닫힘
 
   const toggleSection = (id: number) => {
     setOpenSections((prev) =>
