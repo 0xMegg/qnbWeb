@@ -1,0 +1,46 @@
+import Image from "next/image";
+import SectionHeader from "./SectionHeader";
+
+export default function WhySection() {
+  return (
+    <>
+      <div className="h-4 md:h-6 w-full" />
+      <section className="h-100 pt-8 md:pt-15 flex justify-center items-center">
+        <div>
+          <Image
+            src="/logo.png"
+            alt="Navbar"
+            width={240}
+            height={48}
+            className="h-full object-contain w-40 md:w-60"
+          />
+        </div>
+      </section>
+      <div>
+        <button className="px-4 py-2 border-2 border-white w-30 h-10 md:h-12 border-solid text-lg md:text-xl">
+          무료상담
+        </button>
+      </div>
+      <div className="h-12 md:h-65" />
+      <section className="mx-4 sm:mx-8 md:mx-16">
+        <SectionHeader sectionKey="why" />
+        <h1 className="mb-4 md:mb-6 text-2xl sm:text-3xl md:text-4xl lg:text-[54px] font-bold leading-relaxed">
+          &quot;머리 아픈 고민은 저희에게 맡겨주세요&quot;
+        </h1>
+        <p className="mb-4 text-base sm:text-lg md:text-[20px] leading-relaxed">
+          <b>디자인, 마케팅, 브랜딩...</b> 큐앤뱅에게 이것들은 목적이 아니라
+          문제 해결을 위한 &apos;도구&apos;일 뿐입니다.
+          <br />
+          실력 있는 의사가 환자에게 꼭 필요한 처방만 내리듯, 과잉 진단 없이 문제
+          해결에 딱 필요한 도구만을 꺼내어 사용합니다.
+        </p>
+        <p className="text-base sm:text-lg md:text-[20px] leading-relaxed">
+          고민의 시작부터 느낌표를 찍는 그 순간까지,
+          <br />각 분야 전문가들이 하나의 팀으로 움직이며 비즈니스에 최적화된
+          해답을 제시합니다.
+        </p>
+      </section>
+      <div className="w-full h-12 md:h-60" />
+    </>
+  );
+}
