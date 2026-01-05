@@ -26,7 +26,7 @@ export default function TeamSection() {
           {TEAM_MEMBERS.map((member) => (
             <article
               key={member.name}
-              className="flex flex-col h-full border border-transparent transition-shadow transition-[border-color] duration-200 ease-out hover:shadow-[0_8px_30px_rgba(255,255,255,0.12)] hover:border-white/20 rounded-lg p-2 -m-2 will-change-[shadow,border-color]"
+              className="flex flex-col h-full border border-transparent transition-shadow transition-[border-color] duration-200 ease-out hover:shadow-[0_8px_30px_rgba(255,255,255,0.12)] hover:border-white/20 active:shadow-[0_8px_30px_rgba(255,255,255,0.12)] active:border-white/20 rounded-lg p-2 -m-2 will-change-[shadow,border-color]"
             >
               <div className="relative w-full mb-3 md:mb-4 aspect-[701/934] flex-shrink-0">
                 <Image
