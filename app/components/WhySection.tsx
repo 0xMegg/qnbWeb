@@ -31,9 +31,14 @@ export default function WhySection() {
         </div>
       </section>
       <div className="flex justify-center">
-        <button className="px-4 py-2 border-2 border-white w-30 h-10 md:h-12 border-solid text-lg md:text-xl inline-flex items-center justify-center">
+        <a
+          href="http://pf.kakao.com/_TxdDQn/chat"
+          target="_blank"
+          rel="noreferrer"
+          className="px-4 py-2 border-2 border-white w-30 h-10 md:h-12 border-solid text-lg md:text-xl inline-flex items-center justify-center hover:bg-white hover:text-[#211D1C] active:bg-white/90 active:scale-[0.98] transition-all duration-200 cursor-pointer"
+        >
           무료상담
-        </button>
+        </a>
       </div>
       <section
         ref={sectionRef2}

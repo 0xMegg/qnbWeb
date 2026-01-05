@@ -43,7 +43,7 @@ export default function MakeItBangSection() {
             href="http://pf.kakao.com/_TxdDQn/chat"
             target="_blank"
             rel="noreferrer"
-            className="inline-block bg-[#211D1C] rounded-full shadow-[0_10px_40px_rgba(0,0,0,0.5)] hover:shadow-[0_15px_50px_rgba(0,0,0,0.7)] px-6 sm:px-8 py-3 sm:py-4 text-white font-bold text-base sm:text-lg md:text-xl hover:bg-white hover:text-[#211D1C] hover:border-2 hover:border-[#211D1C] transition-all duration-300 transform hover:scale-105 active:scale-[0.98] active:shadow-[0_8px_30px_rgba(0,0,0,0.5)] w-full sm:w-auto text-center"
+            className="inline-block bg-[#211D1C] rounded-full shadow-[0_10px_40px_rgba(0,0,0,0.5)] hover:shadow-[0_15px_50px_rgba(0,0,0,0.7)] px-6 sm:px-8 py-3 sm:py-4 text-white font-bold text-base sm:text-lg md:text-xl hover:bg-white hover:text-[#211D1C] transition-[background-color,color,box-shadow] duration-300 active:scale-[0.98] active:shadow-[0_8px_30px_rgba(0,0,0,0.5)] active:bg-white/90 w-full sm:w-auto text-center cursor-pointer"
           >
             Let&apos;s make it Bang!
           </a>
