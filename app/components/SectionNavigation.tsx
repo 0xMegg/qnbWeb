@@ -18,6 +18,8 @@ export default function SectionNavigation() {
 
   // 현재 보이는 섹션 감지
   useEffect(() => {
+    let rafId: number | null = null;
+
     const detectCurrentSection = () => {
       const sections = SECTION_ORDER.map((key) => {
         const element = document.getElementById(SECTIONS[key].id);
@@ -70,28 +72,26 @@ export default function SectionNavigation() {
     };
 
     const handleScroll = () => {
-      if (!isScrolling) {
-        detectCurrentSection();
+      // requestAnimationFrame을 사용하여 부드러운 업데이트
+      if (rafId !== null) {
+        cancelAnimationFrame(rafId);
       }
+      rafId = requestAnimationFrame(() => {
+        detectCurrentSection();
+      });
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
     detectCurrentSection(); // 초기 실행
 
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [isScrolling]);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      if (rafId !== null) {
+        cancelAnimationFrame(rafId);
+      }
+    };
+  }, []);
 
-  // 스크롤 완료 후 섹션 감지 재실행
-  useEffect(() => {
-    if (!isScrolling) {
-      // 스크롤이 완료되면 약간의 딜레이 후 섹션 감지 재실행
-      const timer = setTimeout(() => {
-        const event = new Event('scroll');
-        window.dispatchEvent(event);
-      }, 100);
-      return () => clearTimeout(timer);
-    }
-  }, [isScrolling]);
 
   // 섹션으로 스크롤
   const scrollToSection = (key: string) => {
