@@ -6,7 +6,7 @@ import SectionHeader from "./SectionHeader";
 export default function ProcessSection() {
   return (
     <>
-      <section id={SECTIONS.process.id} className="mx-4 sm:mx-8 md:mx-16">
+      <section id={SECTIONS.process.id} className="mx-4 sm:mx-8 md:mx-16 py-16 md:py-24">
         <SectionHeader sectionKey="process" />
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
           {PROCESS_DATA.map((process, index) => (
@@ -35,7 +35,6 @@ export default function ProcessSection() {
           ))}
         </div>
       </section>
-      <div className="w-full h-12 md:h-55" />
     </>
   );
 }

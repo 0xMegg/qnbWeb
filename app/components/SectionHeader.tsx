@@ -9,12 +9,12 @@ export default function SectionHeader({ sectionKey }: SectionHeaderProps) {
 
   return (
     <>
-      <div className="flex justify-center items-center h-[31px]">
-        <hr className="border-white w-13" />
-      </div>
-      <h2 className="mb-6 md:mb-8 text-2xl md:text-3xl font-bold">
+      <h2 className="mb-4 md:mb-6 text-2xl sm:text-3xl md:text-4xl font-bold">
         {section.title}
       </h2>
+      <div className="flex justify-center items-center mb-6 md:mb-8">
+        <hr className="border-white w-13" />
+      </div>
     </>
   );
 }

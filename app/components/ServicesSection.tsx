@@ -18,20 +18,19 @@ export default function ServicesSection() {
 
   return (
     <>
-      <section id={SECTIONS.services.id} className="mx-4 sm:mx-8 md:mx-16">
+      <section id={SECTIONS.services.id} className="mx-4 sm:mx-8 md:mx-16 py-16 md:py-24">
         <SectionHeader sectionKey="services" />
-        <p className="mb-6 md:mb-8 text-2xl sm:text-3xl md:text-4xl lg:text-[56px] font-bold">
+        <p className="mb-6 md:mb-8 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold">
           비즈니스의 시작부터 성장의 순간까지,
           <br />
           당신의 모든 문제를 해결합니다.
         </p>
 
-        <div className="space-y-0 text-sm leading-relaxed text-left">
-          <hr className="border-white mb-0" />
-          {SERVICES_DATA.map((service) => {
+        <div className="space-y-4 sm:space-y-6 text-sm leading-relaxed text-left">
+          {SERVICES_DATA.map((service, index) => {
             const isOpen = openSections.includes(service.id);
             return (
-              <div key={service.id}>
+              <div key={service.id} className="bg-white/5 rounded-lg p-4 sm:p-6">
                 <button
                   onClick={() => toggleSection(service.id)}
                   className="w-full flex items-center justify-between py-3 sm:py-4 text-left"
@@ -43,7 +42,6 @@ export default function ServicesSection() {
                     {isOpen ? "−" : "+"}
                   </span>
                 </button>
-                <hr className="border-white mb-0" />
                 <div
                   className={`grid transition-all duration-300 ease-in-out ${
                     isOpen
@@ -60,10 +58,7 @@ export default function ServicesSection() {
                     <div className="w-full h-6 sm:h-12" />
                     <div className="space-y-3 sm:space-y-4 pb-3 sm:pb-4">
                       {service.items.map((item, itemIndex) => (
-                        <div key={itemIndex}>
-                          {itemIndex > 0 && (
-                            <hr className="border-white/20 my-3 sm:my-4" />
-                          )}
+                        <div key={itemIndex} className={itemIndex > 0 ? "pt-4 sm:pt-6" : ""}>
                           <div className="font-bold mb-2 text-base sm:text-[18px]">
                             {item.title}
                           </div>
@@ -77,13 +72,11 @@ export default function ServicesSection() {
                     <div className="w-full h-6 sm:h-12" />
                   </div>
                 </div>
-                <hr className="border-white/20 mt-0" />
               </div>
             );
           })}
         </div>
       </section>
-      <div className="w-full h-12 md:h-55" />
     </>
   );
 }

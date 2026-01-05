@@ -1,12 +1,12 @@
+import { SECTIONS } from "../data/sectionsData";
 import SectionHeader from "./SectionHeader";
 
 export default function MakeItBangSection() {
   return (
     <>
-      <div className="w-full h-16 sm:h-32 md:h-[250px]" />
-      <section className="mx-4 sm:mx-8 md:mx-16 mt-auto pt-6 sm:pt-8 text-sm leading-relaxed">
+      <section id={SECTIONS.makeItBang.id} className="mx-4 sm:mx-8 md:mx-16 py-16 md:py-24 text-sm leading-relaxed">
         <SectionHeader sectionKey="makeItBang" />
-        <p className="mb-6 md:mb-8 text-2xl sm:text-3xl md:text-4xl lg:text-[56px] font-bold">
+        <p className="mb-6 md:mb-8 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold">
           당신의 질문을 들려주세요.
         </p>
         <p className="mb-2 text-base sm:text-lg md:text-xl">
@@ -30,14 +30,12 @@ export default function MakeItBangSection() {
             href="http://pf.kakao.com/_TxdDQn/chat"
             target="_blank"
             rel="noreferrer"
-            className="inline-block bg-[#211D1C] border-2 border-white px-6 sm:px-8 py-3 sm:py-4 text-white font-bold text-base sm:text-lg md:text-xl hover:bg-white hover:text-[#211D1C] transition-colors w-full sm:w-auto text-center"
+            className="inline-block bg-[#211D1C] rounded-full shadow-[0_10px_40px_rgba(0,0,0,0.5)] hover:shadow-[0_15px_50px_rgba(0,0,0,0.7)] px-6 sm:px-8 py-3 sm:py-4 text-white font-bold text-base sm:text-lg md:text-xl hover:bg-white hover:text-[#211D1C] hover:border-2 hover:border-[#211D1C] transition-all duration-300 transform hover:scale-105 w-full sm:w-auto text-center"
           >
             Let&apos;s make it Bang!
           </a>
         </div>
       </section>
-
-      <div className="w-full h-12 md:h-60" />
     </>
   );
 }

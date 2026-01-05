@@ -1,11 +1,11 @@
 import Image from "next/image";
 import SectionHeader from "./SectionHeader";
+import { SECTIONS } from "../data/sectionsData";
 
 export default function WhySection() {
   return (
     <>
-      <div className="h-4 md:h-6 w-full" />
-      <section className="h-100 pt-8 md:pt-15 flex justify-center items-center">
+      <section id={SECTIONS.why.id} className="py-16 md:py-24 h-100 flex justify-center items-center">
         <div>
           <Image
             src="/logo.png"
@@ -21,10 +21,9 @@ export default function WhySection() {
           무료상담
         </button>
       </div>
-      <div className="h-12 md:h-65" />
-      <section className="mx-4 sm:mx-8 md:mx-16">
+      <section className="mx-4 sm:mx-8 md:mx-16 py-16 md:py-24">
         <SectionHeader sectionKey="why" />
-        <h1 className="mb-4 md:mb-6 text-2xl sm:text-3xl md:text-4xl lg:text-[54px] font-bold leading-relaxed">
+        <h1 className="mb-4 md:mb-6 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-relaxed">
           &quot;머리 아픈 고민은 저희에게 맡겨주세요&quot;
         </h1>
         <p className="mb-4 text-base sm:text-lg md:text-[20px] leading-relaxed">
@@ -40,7 +39,6 @@ export default function WhySection() {
           해답을 제시합니다.
         </p>
       </section>
-      <div className="w-full h-12 md:h-60" />
     </>
   );
 }

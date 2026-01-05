@@ -6,7 +6,7 @@ import SectionHeader from "./SectionHeader";
 export default function TeamSection() {
   return (
     <>
-      <section id={SECTIONS.team.id} className="mx-4 sm:mx-8 md:mx-16">
+      <section id={SECTIONS.team.id} className="mx-4 sm:mx-8 md:mx-16 py-16 md:py-24">
         <SectionHeader sectionKey="team" />
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
@@ -35,7 +35,6 @@ export default function TeamSection() {
           ))}
         </div>
       </section>
-      <div className="w-full h-12 md:h-55" />
     </>
   );
 }
