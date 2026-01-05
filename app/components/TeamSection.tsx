@@ -46,7 +46,7 @@ export default function TeamSection() {
                   <br />
                   {member.quote1Line2}&quot;
                 </p>
-                <p className="text-base sm:text-lg md:text-[20px] leading-relaxed min-h-[6rem] flex-grow flex items-start text-left">
+                <p className="text-base sm:text-lg md:text-[20px] leading-relaxed min-h-[8rem] sm:min-h-[7rem] md:min-h-[8rem] flex-grow flex items-start text-left">
                   {member.quote2}
                 </p>
               </div>
