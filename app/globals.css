@@ -22,5 +22,97 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+}
+
+/* Typography Scale */
+.typography-h1 {
+  font-size: 2rem; /* 32px */
+  line-height: 1.5;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+@media (min-width: 640px) {
+  .typography-h1 {
+    font-size: 2.5rem; /* 40px */
+    line-height: 1.5;
+  }
+}
+
+@media (min-width: 768px) {
+  .typography-h1 {
+    font-size: 3rem; /* 48px */
+    line-height: 1.5;
+  }
+}
+
+@media (min-width: 1024px) {
+  .typography-h1 {
+    font-size: 3.5rem; /* 56px */
+    line-height: 1.5;
+  }
+}
+
+.typography-h2 {
+  font-size: 1.5rem; /* 24px */
+  line-height: 1.6;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+@media (min-width: 640px) {
+  .typography-h2 {
+    font-size: 1.75rem; /* 28px */
+    line-height: 1.6;
+  }
+}
+
+@media (min-width: 768px) {
+  .typography-h2 {
+    font-size: 2rem; /* 32px */
+    line-height: 1.6;
+  }
+}
+
+@media (min-width: 1024px) {
+  .typography-h2 {
+    font-size: 2.25rem; /* 36px */
+    line-height: 1.6;
+  }
+}
+
+.typography-body {
+  font-size: 1rem; /* 16px */
+  line-height: 1.75;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
+@media (min-width: 640px) {
+  .typography-body {
+    font-size: 1.125rem; /* 18px */
+    line-height: 1.75;
+  }
+}
+
+@media (min-width: 768px) {
+  .typography-body {
+    font-size: 1.25rem; /* 20px */
+    line-height: 1.75;
+  }
+}
+
+.typography-caption {
+  font-size: 0.875rem; /* 14px */
+  line-height: 1.6;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+@media (min-width: 640px) {
+  .typography-caption {
+    font-size: 0.9375rem; /* 15px */
+    line-height: 1.6;
+  }
 }
