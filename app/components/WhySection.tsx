@@ -30,8 +30,8 @@ export default function WhySection() {
           />
         </div>
       </section>
-      <div>
-        <button className="px-4 py-2 border-2 border-white w-30 h-10 md:h-12 border-solid text-lg md:text-xl transition-all duration-150 active:scale-[0.98] active:bg-white/10">
+      <div className="flex justify-center">
+        <button className="px-4 py-2 border-2 border-white w-30 h-10 md:h-12 border-solid text-lg md:text-xl inline-flex items-center justify-center">
           무료상담
         </button>
       </div>
@@ -45,7 +45,7 @@ export default function WhySection() {
       >
         <SectionHeader sectionKey="why" />
         <h1 className="mb-4 md:mb-6 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-relaxed">
-          &quot;머리 아픈 고민은 저희에게 맡겨주세요&quot;
+          &quot;머리 아픈 고민은<br className="md:hidden" />저희에게 맡겨주세요&quot;
         </h1>
         <p className="mb-4 text-base sm:text-lg md:text-[20px] leading-relaxed">
           <b>디자인, 마케팅, 브랜딩...</b> 큐앤뱅에게 이것들은 목적이 아니라

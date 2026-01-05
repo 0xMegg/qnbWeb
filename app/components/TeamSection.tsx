@@ -38,10 +38,10 @@ export default function TeamSection() {
                 />
               </div>
               <div className="flex flex-col flex-grow">
-                <h3 className="text-sm sm:text-base font-semibold mb-1 min-h-[2.5rem] flex items-start">
+                <h3 className="text-sm sm:text-base font-semibold mb-0.5 min-h-[2rem] flex items-start">
                   {member.name} | {member.role}
                 </h3>
-                <p className="text-base sm:text-lg md:text-[20px] leading-relaxed mb-2 min-h-[3em] font-semibold">
+                <p className="text-sm sm:text-lg md:text-[20px] leading-tight sm:leading-relaxed mb-2 min-h-[3em] font-semibold">
                   &quot;{member.quote1Line1}
                   <br />
                   {member.quote1Line2}&quot;
