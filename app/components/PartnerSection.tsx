@@ -28,7 +28,7 @@ export default function PartnerSection() {
           {PROCESS_DATA.map((partner, index) => (
             <article
               key={index}
-              className="flex flex-col transition-all duration-300 hover:shadow-[0_8px_30px_rgba(255,255,255,0.12)] hover:border hover:border-white/20 rounded-lg p-2 -m-2"
+              className="flex flex-col border border-transparent transition-shadow transition-[border-color] duration-200 ease-out hover:shadow-[0_8px_30px_rgba(255,255,255,0.12)] hover:border-white/20 rounded-lg p-2 -m-2 will-change-[shadow,border-color]"
             >
               <div
                 className="relative w-full mb-3 md:mb-4"
