@@ -33,7 +33,7 @@ const Footer = () => {
                   href="http://pf.kakao.com/_TxdDQn/chat"
                   target="_blank"
                   rel="noreferrer"
-                  className="text-xs text-zinc-300 hover:text-white underline underline-offset-4"
+                  className="text-xs text-zinc-300 hover:text-white underline underline-offset-4 transition-colors duration-200 active:opacity-80"
                 >
                   카카오 채널로 상담하기
                 </a>

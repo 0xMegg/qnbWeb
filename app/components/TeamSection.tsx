@@ -1,17 +1,33 @@
+"use client";
+
 import Image from "next/image";
 import { TEAM_MEMBERS } from "../data/teamMembers";
 import { SECTIONS } from "../data/sectionsData";
 import SectionHeader from "./SectionHeader";
+import { useIntersectionObserver } from "../hooks/useIntersectionObserver";
 
 export default function TeamSection() {
+  const [sectionRef, isVisible] = useIntersectionObserver();
+
   return (
     <>
-      <section id={SECTIONS.team.id} className="mx-4 sm:mx-8 md:mx-16 py-16 md:py-24">
+      <section
+        ref={sectionRef}
+        id={SECTIONS.team.id}
+        className={`mx-4 sm:mx-8 md:mx-16 py-16 md:py-24 transition-all duration-700 ease-out ${
+          isVisible
+            ? "opacity-100 translate-y-0"
+            : "opacity-0 translate-y-8"
+        }`}
+      >
         <SectionHeader sectionKey="team" />
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
           {TEAM_MEMBERS.map((member) => (
-            <article key={member.name} className="flex flex-col h-full">
+            <article
+              key={member.name}
+              className="flex flex-col h-full transition-all duration-300 hover:shadow-[0_8px_30px_rgba(255,255,255,0.12)] hover:border hover:border-white/20 rounded-lg p-2 -m-2"
+            >
               <div className="relative w-full mb-3 md:mb-4 aspect-[701/934] flex-shrink-0">
                 <Image
                   src={member.image}

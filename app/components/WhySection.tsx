@@ -1,11 +1,25 @@
+"use client";
+
 import Image from "next/image";
 import SectionHeader from "./SectionHeader";
 import { SECTIONS } from "../data/sectionsData";
+import { useIntersectionObserver } from "../hooks/useIntersectionObserver";
 
 export default function WhySection() {
+  const [sectionRef1, isVisible1] = useIntersectionObserver();
+  const [sectionRef2, isVisible2] = useIntersectionObserver();
+
   return (
     <>
-      <section id={SECTIONS.why.id} className="py-16 md:py-24 h-100 flex justify-center items-center">
+      <section
+        ref={sectionRef1}
+        id={SECTIONS.why.id}
+        className={`py-16 md:py-24 h-100 flex justify-center items-center transition-all duration-700 ease-out ${
+          isVisible1
+            ? "opacity-100 translate-y-0"
+            : "opacity-0 translate-y-8"
+        }`}
+      >
         <div>
           <Image
             src="/logo.png"
@@ -17,11 +31,18 @@ export default function WhySection() {
         </div>
       </section>
       <div>
-        <button className="px-4 py-2 border-2 border-white w-30 h-10 md:h-12 border-solid text-lg md:text-xl">
+        <button className="px-4 py-2 border-2 border-white w-30 h-10 md:h-12 border-solid text-lg md:text-xl transition-all duration-150 active:scale-[0.98] active:bg-white/10">
           무료상담
         </button>
       </div>
-      <section className="mx-4 sm:mx-8 md:mx-16 py-16 md:py-24">
+      <section
+        ref={sectionRef2}
+        className={`mx-4 sm:mx-8 md:mx-16 py-16 md:py-24 transition-all duration-700 ease-out ${
+          isVisible2
+            ? "opacity-100 translate-y-0"
+            : "opacity-0 translate-y-8"
+        }`}
+      >
         <SectionHeader sectionKey="why" />
         <h1 className="mb-4 md:mb-6 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-relaxed">
           &quot;머리 아픈 고민은 저희에게 맡겨주세요&quot;

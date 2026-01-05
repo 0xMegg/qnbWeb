@@ -4,9 +4,11 @@ import { useState } from "react";
 import { SERVICES_DATA } from "../data/servicesData";
 import { SECTIONS } from "../data/sectionsData";
 import SectionHeader from "./SectionHeader";
+import { useIntersectionObserver } from "../hooks/useIntersectionObserver";
 
 export default function ServicesSection() {
   const [openSections, setOpenSections] = useState<number[]>([]); // 모든 섹션 기본적으로 접힘
+  const [sectionRef, isVisible] = useIntersectionObserver();
 
   const toggleSection = (id: number) => {
     setOpenSections((prev) =>
@@ -18,7 +20,15 @@ export default function ServicesSection() {
 
   return (
     <>
-      <section id={SECTIONS.services.id} className="mx-4 sm:mx-8 md:mx-16 py-16 md:py-24">
+      <section
+        ref={sectionRef}
+        id={SECTIONS.services.id}
+        className={`mx-4 sm:mx-8 md:mx-16 py-16 md:py-24 transition-all duration-700 ease-out ${
+          isVisible
+            ? "opacity-100 translate-y-0"
+            : "opacity-0 translate-y-8"
+        }`}
+      >
         <SectionHeader sectionKey="services" />
         <p className="mb-6 md:mb-8 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold">
           비즈니스의 시작부터 성장의 순간까지,
@@ -30,10 +40,13 @@ export default function ServicesSection() {
           {SERVICES_DATA.map((service, index) => {
             const isOpen = openSections.includes(service.id);
             return (
-              <div key={service.id} className="bg-white/5 rounded-lg p-4 sm:p-6">
+              <div
+                key={service.id}
+                className="bg-white/5 rounded-lg p-4 sm:p-6 transition-all duration-300 hover:shadow-[0_8px_30px_rgba(255,255,255,0.08)] hover:bg-white/8"
+              >
                 <button
                   onClick={() => toggleSection(service.id)}
-                  className="w-full flex items-center justify-between py-3 sm:py-4 text-left"
+                  className="w-full flex items-center justify-between py-3 sm:py-4 text-left transition-all duration-150 active:scale-[0.98]"
                 >
                   <h3 className="text-xl sm:text-2xl md:text-3xl my-2 sm:my-4 pr-2">
                     {service.title}

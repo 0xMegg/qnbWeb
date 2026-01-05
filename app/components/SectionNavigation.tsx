@@ -120,7 +120,7 @@ export default function SectionNavigation() {
             <button
               key={key}
               onClick={() => scrollToSection(key)}
-              className="group relative flex items-center"
+              className="group relative flex items-center transition-all duration-150 active:scale-90"
               aria-label={`${SECTIONS[key].title}로 이동`}
             >
               <div
@@ -147,7 +147,7 @@ export default function SectionNavigation() {
           className={`w-10 h-10 md:w-12 md:h-12 flex items-center justify-center border-1 border-white/50 rounded-full text-white transition-all duration-300 ${
             isFirst
               ? "opacity-30 cursor-not-allowed"
-              : "opacity-100 hover:bg-white hover:text-[#211D1C] cursor-pointer"
+              : "opacity-100 hover:bg-white hover:text-[#211D1C] cursor-pointer active:scale-95"
           }`}
           aria-label="이전 섹션으로 이동"
         >
@@ -170,7 +170,7 @@ export default function SectionNavigation() {
           className={`w-10 h-10 md:w-12 md:h-12 flex items-center justify-center border-1 border-white/50 rounded-full text-white transition-all duration-300 ${
             isLast
               ? "opacity-30 cursor-not-allowed"
-              : "opacity-100 hover:bg-white hover:text-[#211D1C] cursor-pointer"
+              : "opacity-100 hover:bg-white hover:text-[#211D1C] cursor-pointer active:scale-95"
           }`}
           aria-label="다음 섹션으로 이동"
         >
