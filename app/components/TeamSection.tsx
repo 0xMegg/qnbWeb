@@ -22,7 +22,7 @@ export default function TeamSection() {
       >
         <SectionHeader sectionKey="team" />
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
           {TEAM_MEMBERS.map((member) => (
             <article
               key={member.name}
