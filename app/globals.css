@@ -87,12 +87,16 @@ body {
   line-height: 1.75;
   font-weight: 400;
   letter-spacing: -0.01em;
+  max-width: 60ch;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 @media (min-width: 640px) {
   .typography-body {
     font-size: 1.125rem; /* 18px */
     line-height: 1.75;
+    max-width: 65ch;
   }
 }
 
@@ -100,6 +104,7 @@ body {
   .typography-body {
     font-size: 1.25rem; /* 20px */
     line-height: 1.75;
+    max-width: 70ch;
   }
 }
 
