@@ -3,6 +3,9 @@
 import { useEffect, useState } from "react";
 import { SECTIONS } from "../data/sectionsData";
 
+// 오른쪽 이동 버튼 활성화 여부 (임시 비활성화: false, 활성화: true)
+const ENABLE_RIGHT_NAVIGATION = false;
+
 const SECTION_ORDER = [
   "why",
   "team",
@@ -170,56 +173,58 @@ export default function SectionNavigation() {
       </div>
 
       {/* 오른쪽 위/아래 버튼 */}
-      <div className="fixed right-3 sm:right-5 md:right-8 bottom-24 md:top-1/2 md:bottom-auto translate-y-0 md:-translate-y-1/2 z-40 flex flex-col gap-2 md:gap-3">
-        <button
-          onClick={goToPrevious}
-          disabled={isFirst}
-          className={`w-10 h-10 md:w-12 md:h-12 flex items-center justify-center border-2 border-black rounded-full text-white transition-all duration-300 ${
-            isFirst
-              ? "opacity-30 cursor-not-allowed"
-              : "opacity-100 hover:bg-white hover:text-[#211D1C] cursor-pointer active:scale-95"
-          }`}
-          aria-label="이전 섹션으로 이동"
-        >
-          <svg
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            className="drop-shadow-[0_0_2px_black]"
+      {ENABLE_RIGHT_NAVIGATION && (
+        <div className="fixed right-3 sm:right-5 md:right-8 bottom-24 md:top-1/2 md:bottom-auto translate-y-0 md:-translate-y-1/2 z-40 flex flex-col gap-2 md:gap-3">
+          <button
+            onClick={goToPrevious}
+            disabled={isFirst}
+            className={`w-10 h-10 md:w-12 md:h-12 flex items-center justify-center border-2 border-black rounded-full text-white transition-all duration-300 ${
+              isFirst
+                ? "opacity-30 cursor-not-allowed"
+                : "opacity-100 hover:bg-white hover:text-[#211D1C] cursor-pointer active:scale-95"
+            }`}
+            aria-label="이전 섹션으로 이동"
           >
-            <path d="M18 15l-6-6-6 6" />
-          </svg>
-        </button>
-        <button
-          onClick={goToNext}
-          disabled={isLast}
-          className={`w-10 h-10 md:w-12 md:h-12 flex items-center justify-center border-2 border-black rounded-full text-white transition-all duration-300 ${
-            isLast
-              ? "opacity-30 cursor-not-allowed"
-              : "opacity-100 hover:bg-white hover:text-[#211D1C] cursor-pointer active:scale-95"
-          }`}
-          aria-label="다음 섹션으로 이동"
-        >
-          <svg
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            className="drop-shadow-[0_0_2px_black]"
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="drop-shadow-[0_0_2px_black]"
+            >
+              <path d="M18 15l-6-6-6 6" />
+            </svg>
+          </button>
+          <button
+            onClick={goToNext}
+            disabled={isLast}
+            className={`w-10 h-10 md:w-12 md:h-12 flex items-center justify-center border-2 border-black rounded-full text-white transition-all duration-300 ${
+              isLast
+                ? "opacity-30 cursor-not-allowed"
+                : "opacity-100 hover:bg-white hover:text-[#211D1C] cursor-pointer active:scale-95"
+            }`}
+            aria-label="다음 섹션으로 이동"
           >
-            <path d="M6 9l6 6 6-6" />
-          </svg>
-        </button>
-      </div>
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="drop-shadow-[0_0_2px_black]"
+            >
+              <path d="M6 9l6 6 6-6" />
+            </svg>
+          </button>
+        </div>
+      )}
     </>
   );
 }
